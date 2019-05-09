@@ -1,14 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import { Button } from 'reactstrap';
 
 class Users extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			users: []
-		};
-	}
+	state = {
+		users: []
+	};
 
 	componentDidMount() {
 		axios
@@ -17,7 +13,6 @@ class Users extends React.Component {
 				headers: { authorization: localStorage.getItem('token') }
 			})
 			.then((response) => {
-				console.log(response);
 				this.setState({
 					users: response.data
 				});
@@ -32,7 +27,7 @@ class Users extends React.Component {
 		return (
 			<div>
 				<h1>Students</h1>
-				{users.map((user) => {
+				{this.state.users.map((user) => {
 					return (
 						<div>
 							<h3 key={user.id}>{user.username}</h3>

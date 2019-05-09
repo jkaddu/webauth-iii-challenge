@@ -11,7 +11,7 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar>
-				<NavbarBrand>Top Nine</NavbarBrand>
+				<NavbarBrand>Enter the Dragon</NavbarBrand>
 				<Nav>
 					<NavItem>
 						<NavLink href="/">Login</NavLink>
