@@ -5,6 +5,8 @@ import { Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
 
 import Login from './components/Login';
 import Register from './components/Register';
+import Users from './components/Users';
+
 function App() {
 	return (
 		<div className="App">
@@ -22,7 +24,7 @@ function App() {
 
 			<Route exact path="/" component={Login} />
 			<Route path="/register" component={Register} />
-			<Route path="/home" component={Home} />
+			<Route path="/home" component={Users} />
 		</div>
 	);
 }
