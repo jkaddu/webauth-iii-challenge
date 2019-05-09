@@ -7,7 +7,11 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Users from './components/Users';
 
-function App() {
+function App(props) {
+	function logout() {
+		localStorage.removeItem('token');
+		props.history.push('/');
+	}
 	return (
 		<div className="App">
 			<Navbar>
@@ -18,6 +22,11 @@ function App() {
 					</NavItem>
 					<NavItem>
 						<NavLink href="/home">Home</NavLink>
+					</NavItem>
+					<NavItem>
+						<Button type="button" onClick={logout}>
+							Logout
+						</Button>
 					</NavItem>
 				</Nav>
 			</Navbar>
